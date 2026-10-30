@@ -131,18 +131,18 @@ export default function Navbar() {
           {homeOpen && (
             <div className="nav-dropdown">
               <Link to="/" onClick={closeMenus}>
-                <FiHome /> Home page
+                <FiHome /> Home 1
               </Link>
 
               <Link to="/trips" onClick={closeMenus}>
-                <FiMap /> Explore trips
+               <FiHome /> Home 2
               </Link>
             </div>
           )}
         </div>
 
         {/* Public website sections */}
-        <a href="/#services" onClick={closeMenus}>
+        <a href="/services" onClick={closeMenus}>
           <FiBriefcase className="mobile-link-icon" />
           Services
         </a>
@@ -152,12 +152,12 @@ export default function Navbar() {
           Gallery
         </a>
 
-        <a href="/#about" onClick={closeMenus}>
+        <a href="/about" onClick={closeMenus}>
           <FiInfo className="mobile-link-icon" />
           About
         </a>
 
-        <a href="/#contact" onClick={closeMenus}>
+        <a href="/contact" onClick={closeMenus}>
           <FiMail className="mobile-link-icon" />
           Contact
         </a>
@@ -180,7 +180,7 @@ export default function Navbar() {
                 onClick={closeMenus}
               >
                 <FiGrid />
-                Admin Dashboard
+                Admin 
               </Link>
 
               <Link
@@ -188,7 +188,7 @@ export default function Navbar() {
                 onClick={closeMenus}
               >
                 <FiUser />
-                Traveler Dashboard
+                Traveler
               </Link>
             </div>
           )}

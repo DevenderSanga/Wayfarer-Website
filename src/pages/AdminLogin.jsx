@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { FiCompass, FiLock, FiMail, FiArrowLeft } from "react-icons/fi";
-import { useAuth } from "../auth/AuthContext.jsx";
+// import { useAuth } from "../auth/AuthContext.jsx";
 export default function AdminLogin() {
   const { admin, login } = useAuth(); const navigate=useNavigate();
   const [email,setEmail]=useState(""); const [password,setPassword]=useState(""); const [error,setError]=useState("");

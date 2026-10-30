@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { NavLink, Outlet, Link, useNavigate } from "react-router-dom";
+
 import {
   FiCompass,
   FiGrid,
@@ -14,11 +15,10 @@ import {
   FiGlobe,
   FiPlus
 } from "react-icons/fi";
-import { useAuth } from "../auth/AuthContext.jsx";
+
 import "../styles/AdminDashboard.css";
 
 export default function AdminLayout() {
-  const { admin, logout } = useAuth();
   const navigate = useNavigate();
 
   const [darkMode, setDarkMode] = useState(
@@ -31,21 +31,29 @@ export default function AdminLayout() {
 
   function toggleTheme() {
     const next = !darkMode;
+
     setDarkMode(next);
+
     document.documentElement.classList.toggle("theme-dark", next);
     document.documentElement.style.colorScheme = next ? "dark" : "light";
+
     localStorage.setItem("wayfarerTheme", next ? "dark" : "light");
   }
 
   function toggleDirection() {
     const next = !rtl;
+
     setRtl(next);
+
     document.documentElement.dir = next ? "rtl" : "ltr";
-    localStorage.setItem("wayfarerDirection", next ? "rtl" : "ltr");
+
+    localStorage.setItem(
+      "wayfarerDirection",
+      next ? "rtl" : "ltr"
+    );
   }
 
   function handleLogout() {
-    logout();
     navigate("/");
   }
 
@@ -60,9 +68,14 @@ export default function AdminLayout() {
 
   return (
     <div className="way-admin">
+
+      {/* Sidebar */}
       <aside className="way-sidebar">
+
         <Link to="/" className="way-brand">
-          <span className="way-brand-icon"><FiCompass /></span>
+          <span className="way-brand-icon">
+            <FiCompass />
+          </span>
           <span>Wayfarer</span>
         </Link>
 
@@ -83,35 +96,42 @@ export default function AdminLayout() {
           ))}
         </nav>
 
+        {/* Sidebar bottom */}
         <div className="way-sidebar-bottom">
-          <div className="way-avatar">
-            {(admin?.email || "A").charAt(0).toUpperCase()}
-          </div>
+
+          <div className="way-avatar">A</div>
 
           <div className="way-user-details">
-            <strong>{admin?.name || "Administrator"}</strong>
-            <span>{admin?.email || "Admin account"}</span>
+            <strong>Administrator</strong>
+            <span>Admin account</span>
           </div>
 
           <button
             className="way-icon-button"
             onClick={handleLogout}
-            title="Sign out"
-            aria-label="Sign out"
+            title="Back to Home"
+            aria-label="Back to Home"
           >
             <FiLogOut />
           </button>
+
         </div>
       </aside>
 
+      {/* Main content */}
       <main className="way-admin-main">
+
+        {/* Topbar */}
         <header className="way-topbar">
+
           <div className="way-topbar-heading">
             <h2>Overview</h2>
             <p>Welcome to your Wayfarer travel workspace.</p>
           </div>
 
           <div className="way-topbar-actions">
+
+            {/* Dark mode */}
             <button
               className="way-round-button"
               onClick={toggleTheme}
@@ -121,6 +141,7 @@ export default function AdminLayout() {
               {darkMode ? <FiSun /> : <FiMoon />}
             </button>
 
+            {/* RTL / LTR */}
             <button
               className="way-direction-button"
               onClick={toggleDirection}
@@ -129,25 +150,31 @@ export default function AdminLayout() {
               <FiGlobe /> {rtl ? "RTL" : "LTR"}
             </button>
 
+            {/* New booking */}
             <Link to="/trips" className="way-new-booking">
               <FiPlus /> New booking
             </Link>
 
+            {/* Admin profile */}
             <div className="way-topbar-user">
-              <div className="way-avatar">
-                {(admin?.email || "A").charAt(0).toUpperCase()}
-              </div>
+
+              <div className="way-avatar">A</div>
+
               <div className="way-user-details">
-                <strong>{admin?.name || "Administrator"}</strong>
+                <strong>Administrator</strong>
                 <span>Admin</span>
               </div>
+
             </div>
+
           </div>
         </header>
 
+        {/* Child pages appear here */}
         <div className="way-admin-content">
           <Outlet />
         </div>
+
       </main>
     </div>
   );

@@ -14,6 +14,9 @@ import TripDetails from "./pages/TripDetails.jsx";
 import Booking from "./pages/Booking.jsx";
 import Confirmation from "./pages/Confirmation.jsx";
 import NotFound from "./pages/NotFound.jsx";
+import Contact from "./pages/Contact.jsx";
+import Services from "./pages/Services.jsx";
+import About from "./pages/About.jsx";
 
 // Admin pages
 import Dashboard from "./pages/admin/Dashboard.jsx";
@@ -47,6 +50,30 @@ export default function App() {
         element={
           <PublicLayout>
             <Home />
+          </PublicLayout>
+        }
+      />
+      <Route
+        path="/contact"
+        element={
+          <PublicLayout>
+            <Contact />
+          </PublicLayout>
+        }
+      />
+      <Route
+        path="/services"
+        element={
+          <PublicLayout>
+            <Services />
+          </PublicLayout>
+        }
+      />
+      <Route
+        path="/about"
+        element={
+          <PublicLayout>
+            <About />
           </PublicLayout>
         }
       />
