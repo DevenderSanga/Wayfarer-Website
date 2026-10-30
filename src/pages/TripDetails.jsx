@@ -1,0 +1,9 @@
+import { Link, useParams } from "react-router-dom";
+import { FiArrowLeft, FiMapPin, FiStar, FiClock, FiCheck } from "react-icons/fi";
+import { getTrips, money } from "../data/trips.js";
+export default function TripDetails() {
+  const { id } = useParams();
+  const trip = getTrips().find(t=>String(t.id)===String(id));
+  if (!trip) return <main className="empty-state page-main"><h2>Trip not found</h2><Link to="/trips" className="text-link">Browse all trips</Link></main>;
+  return <main className="page-main detail-page"><div className="section-wrap"><Link to="/trips" className="back-link"><FiArrowLeft/> All trips</Link><div className="detail-layout"><div><img className="detail-image" src={trip.image} alt={trip.title}/><div className="detail-description"><div className="eyebrow"><span></span> A WAYFARER ORIGINAL</div><h2>A little more <em>you time.</em></h2><p>{trip.description}</p><div className="included-list"><span><FiCheck/> Curated local experiences</span><span><FiCheck/> Comfortable handpicked stays</span><span><FiCheck/> Flexible, thoughtful itinerary</span></div></div></div><aside className="booking-panel"><span className="category-label">{trip.category} escape</span><h1>{trip.title}</h1><div className="detail-meta"><span><FiMapPin/> {trip.location}</span><span><FiClock/> {trip.duration}</span><span><FiStar/> {trip.rating || "4.8"} rating</span></div><div className="detail-price">{money(trip.price)} <small>/ person</small></div><p className="muted">Sample package price. No payment is collected in this demo.</p><Link to={`/booking/${trip.id}`} className="button button-dark full-button">Plan this trip <span>↗</span></Link><div className="secure-note">✦ No commitment — just the start of something good.</div></aside></div></div></main>;
+}

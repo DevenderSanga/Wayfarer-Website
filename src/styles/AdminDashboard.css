@@ -1,0 +1,734 @@
+
+/* Main admin layout */
+.way-admin {
+  --way-green: #086451;
+  --way-green-light: #e5f2ed;
+  --way-border: #e6ddd0;
+  --way-text: #17251f;
+  --way-muted: #847c72;
+  --way-bg: #faf7f1;
+  display: flex;
+  min-height: 100vh;
+  background: var(--way-bg);
+  color: var(--way-text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.way-admin * {
+  box-sizing: border-box;
+}
+
+.way-sidebar {
+  width: 240px;
+  min-width: 240px;
+  background: #fff;
+  border-right: 1px solid var(--way-border);
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.way-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 2px 8px 24px;
+  border-bottom: 1px solid var(--way-border);
+  color: var(--way-text);
+  text-decoration: none;
+  font-family: Georgia, serif;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.way-brand-icon {
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  background: var(--way-green);
+  color: #fff;
+}
+
+.way-sidebar-label {
+  margin: 22px 10px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  color: var(--way-muted);
+}
+
+.way-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.way-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: 0 12px;
+  border-radius: 9px;
+  text-decoration: none;
+  color: #3b403c;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+.way-nav-link svg {
+  font-size: 19px;
+  flex-shrink: 0;
+}
+
+.way-nav-link:hover,
+.way-nav-link.active {
+  background: var(--way-green-light);
+  color: var(--way-green);
+}
+
+.way-nav-link.active {
+  font-weight: 700;
+}
+
+.way-sidebar-bottom {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid var(--way-border);
+}
+
+.way-avatar {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  border-radius: 50%;
+  background: var(--way-green);
+  color: #fff;
+  font-weight: 700;
+}
+
+.way-user-details {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.way-user-details strong {
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.way-user-details span {
+  color: var(--way-muted);
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.way-icon-button,
+.way-round-button,
+.way-direction-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid #d9cbb8;
+  background: #fff;
+  color: var(--way-text);
+  cursor: pointer;
+  border-radius: 30px;
+  min-height: 40px;
+  padding: 0 13px;
+}
+
+.way-icon-button {
+  width: 35px;
+  min-width: 35px;
+  padding: 0;
+  border: 0;
+}
+
+.way-admin-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.way-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  min-height: 82px;
+  padding: 14px 28px;
+  background: #fff;
+  border-bottom: 1px solid var(--way-border);
+}
+
+.way-topbar-heading h2 {
+  margin: 0 0 6px;
+  font-family: Georgia, serif;
+  font-size: 24px;
+}
+
+.way-topbar-heading p {
+  margin: 0;
+  color: var(--way-muted);
+  font-size: 13px;
+}
+
+.way-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.way-new-booking,
+.way-primary-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--way-green);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.way-new-booking:hover,
+.way-primary-button:hover {
+  background: #064f42;
+}
+
+.way-topbar-user {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding-left: 12px;
+  border-left: 1px solid var(--way-border);
+}
+
+/* Page headings */
+.way-admin-content {
+  padding: 24px 28px 36px;
+}
+
+.way-page {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.way-page-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.way-eyebrow {
+  color: var(--way-green);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+}
+
+.way-page-heading h1 {
+  margin: 8px 0;
+  font-family: Georgia, serif;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.way-page-heading p {
+  margin: 0;
+  color: var(--way-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Statistics */
+.way-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.way-stat-card {
+  min-width: 0;
+  padding: 19px;
+  background: #fff;
+  border: 1px solid var(--way-border);
+  border-radius: 18px;
+}
+
+.way-stat-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--way-muted);
+  font-size: 12px;
+}
+
+.way-stat-card > strong {
+  display: block;
+  margin-top: 17px;
+  font-family: Georgia, serif;
+  font-size: 29px;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.way-stat-icon {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
+
+.way-stat-icon.green {
+  background: #e5f2ed;
+  color: #086451;
+}
+
+.way-stat-icon.yellow {
+  background: #fff4d9;
+  color: #a76b00;
+}
+
+.way-stat-icon.orange {
+  background: #fcebe4;
+  color: #c14c26;
+}
+
+/* Panels and tables */
+.way-panel {
+  margin-bottom: 20px;
+  background: #fff;
+  border: 1px solid var(--way-border);
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.way-panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 19px 22px;
+  border-bottom: 1px solid var(--way-border);
+}
+
+.way-panel-heading h3 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.way-panel-heading p {
+  margin: 6px 0 0;
+  color: var(--way-muted);
+  font-size: 12px;
+}
+
+.way-view-link {
+  color: var(--way-green);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.way-view-link:hover {
+  text-decoration: underline;
+}
+
+.way-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  padding: 8px 22px 16px;
+}
+
+.way-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 12px;
+}
+
+.way-table th {
+  padding: 17px 12px;
+  border-bottom: 1px solid var(--way-border);
+  color: var(--way-muted);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.7px;
+  white-space: nowrap;
+}
+
+.way-table td {
+  padding: 15px 12px;
+  border-bottom: 1px solid var(--way-border);
+  vertical-align: middle;
+  white-space: normal;
+}
+
+.way-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.way-table td strong,
+.way-table td small {
+  display: block;
+}
+
+.way-table td small {
+  margin-top: 5px;
+  color: var(--way-muted);
+  font-size: 10px;
+}
+
+.way-reference {
+  color: #8b7862;
+  white-space: nowrap !important;
+}
+
+.way-status {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: #f1f1ed;
+  color: #555;
+  font-size: 10px;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.way-status.confirmed,
+.way-status.completed {
+  background: #e5f2ed;
+  color: #08734e;
+}
+
+.way-status.pending {
+  background: #fff1d5;
+  color: #a76800;
+}
+
+.way-status.cancelled {
+  background: #fae4e1;
+  color: #b33a30;
+}
+
+.way-empty {
+  padding: 42px 20px;
+  text-align: center;
+}
+
+.way-empty > svg {
+  color: var(--way-green);
+  font-size: 28px;
+}
+
+.way-empty h3 {
+  margin: 12px 0 7px;
+}
+
+.way-empty p {
+  margin: 0 0 15px;
+  color: var(--way-muted);
+  font-size: 13px;
+}
+
+/* Quick links and reports */
+.way-quick-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.way-quick-card {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 19px;
+  background: #fff;
+  border: 1px solid var(--way-border);
+  border-radius: 14px;
+  text-decoration: none;
+  color: var(--way-text);
+}
+
+.way-quick-card > svg {
+  color: var(--way-green);
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.way-quick-card strong {
+  font-size: 13px;
+}
+
+.way-quick-card p {
+  margin: 6px 0 0;
+  color: var(--way-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.way-report-chart {
+  width: 100%;
+  height: 300px;
+  padding: 20px;
+}
+
+.way-report-summary {
+  padding: 10px 22px 18px;
+}
+
+.way-report-summary p {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--way-border);
+  font-size: 13px;
+}
+
+.way-report-summary p:last-child {
+  border-bottom: 0;
+}
+
+.way-report-summary span {
+  color: var(--way-muted);
+}
+
+/* Settings */
+.way-settings-panel {
+  max-width: 900px;
+}
+
+.way-setting-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 22px;
+  border-bottom: 1px solid var(--way-border);
+}
+
+.way-setting-row > span {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.way-setting-row strong {
+  font-size: 13px;
+}
+
+.way-setting-row small,
+.way-settings-note {
+  color: var(--way-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.way-setting-row select {
+  min-width: 120px;
+  padding: 10px;
+  border: 1px solid var(--way-border);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--way-text);
+}
+
+.way-settings-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 18px 22px;
+}
+
+.way-settings-note {
+  padding: 20px 22px;
+}
+
+/* Basic dark theme */
+.theme-dark .way-admin {
+  --way-bg: #17211e;
+  --way-text: #f1f5f2;
+  --way-muted: #a7b1aa;
+  --way-border: #39443e;
+  --way-green-light: #24483e;
+  background: var(--way-bg);
+  color: var(--way-text);
+}
+
+.theme-dark .way-sidebar,
+.theme-dark .way-topbar,
+.theme-dark .way-stat-card,
+.theme-dark .way-panel,
+.theme-dark .way-quick-card {
+  background: #202c27;
+  color: var(--way-text);
+}
+
+.theme-dark .way-brand,
+.theme-dark .way-nav-link {
+  color: var(--way-text);
+}
+
+.theme-dark .way-nav-link.active {
+  color: #a8e2ce;
+}
+
+.theme-dark .way-round-button,
+.theme-dark .way-direction-button,
+.theme-dark .way-icon-button,
+.theme-dark .way-setting-row select {
+  background: #202c27;
+  color: var(--way-text);
+  border-color: var(--way-border);
+}
+
+/* Responsive layout */
+@media (max-width: 1100px) {
+  .way-sidebar {
+    width: 210px;
+    min-width: 210px;
+  }
+
+  .way-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .way-topbar {
+    padding: 14px 18px;
+  }
+
+  .way-topbar-actions {
+    gap: 8px;
+  }
+
+  .way-admin-content {
+    padding: 20px 18px 30px;
+  }
+}
+
+@media (max-width: 760px) {
+  .way-admin {
+    flex-direction: column;
+  }
+
+  .way-sidebar {
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    border-right: 0;
+    border-bottom: 1px solid var(--way-border);
+  }
+
+  .way-brand {
+    padding-bottom: 12px;
+  }
+
+  .way-sidebar-label {
+    margin: 12px 5px 8px;
+  }
+
+  .way-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .way-nav-link {
+    min-height: 38px;
+    padding: 0 10px;
+    font-size: 12px;
+  }
+
+  .way-sidebar-bottom {
+    margin-top: 12px;
+    padding-top: 12px;
+  }
+
+  .way-topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .way-topbar-actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .way-admin-content {
+    padding: 16px 12px 24px;
+  }
+
+  .way-quick-links {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .way-stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .way-stat-card {
+    padding: 13px;
+  }
+
+  .way-stat-card > strong {
+    font-size: 23px;
+  }
+
+  .way-page-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .way-page-heading h1 {
+    font-size: 27px;
+  }
+
+  .way-topbar-user {
+    display: none;
+  }
+
+  .way-panel-heading {
+    padding: 15px;
+  }
+
+  .way-table-scroll {
+    padding: 5px 12px 12px;
+  }
+
+  .way-table th,
+  .way-table td {
+    padding: 12px 10px;
+  }
+
+  .way-setting-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,2 @@
+import { Link } from "react-router-dom";
+export default function NotFound(){return <main className="empty-state page-main"><div className="eyebrow"><span></span> WRONG TURN</div><h1>Lost your <em>way?</em></h1><p>Looks like this page isn't on the map.</p><Link to="/" className="button button-dark">Back home ↗</Link></main>}

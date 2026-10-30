@@ -1,0 +1,314 @@
+
+.admin-settings-page {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 28px;
+  color: #20352c;
+}
+
+.settings-page-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 26px;
+}
+
+.settings-eyebrow {
+  color: #08745d;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.settings-page-heading h1 {
+  margin: 7px 0;
+  font-size: 30px;
+}
+
+.settings-page-heading p,
+.settings-section-heading p {
+  margin: 0;
+  color: #718078;
+  font-size: 14px;
+}
+
+.settings-save-button,
+.settings-add-member-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 17px;
+  border: 0;
+  border-radius: 9px;
+  background: #086451;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.settings-save-button:hover,
+.settings-add-member-button:hover {
+  background: #064b3e;
+}
+
+.settings-message {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 15px;
+  margin-bottom: 18px;
+  border: 1px solid #b8dfc9;
+  border-radius: 9px;
+  background: #edf8f0;
+  color: #17633d;
+  font-size: 14px;
+}
+
+.settings-card {
+  margin-bottom: 22px;
+  padding: 25px;
+  border: 1px solid #e1e9e3;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 8px 28px rgba(24, 55, 40, 0.04);
+}
+
+.settings-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 25px;
+}
+
+.settings-section-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #eaf4ee;
+  color: #086451;
+  font-size: 20px;
+}
+
+.settings-section-heading h2 {
+  margin: 0 0 5px;
+  font-size: 18px;
+}
+
+.settings-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.settings-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  color: #35483e;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.settings-field-full {
+  grid-column: 1 / -1;
+}
+
+.settings-field input,
+.settings-field select {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 12px 13px;
+  border: 1px solid #dce5de;
+  border-radius: 8px;
+  outline: none;
+  background: #fff;
+  color: #20352c;
+  font: inherit;
+  font-weight: 400;
+}
+
+.settings-field input:focus,
+.settings-field select:focus {
+  border-color: #08745d;
+  box-shadow: 0 0 0 3px rgba(8, 116, 93, 0.1);
+}
+
+.settings-field small,
+.settings-toggle-row small {
+  display: block;
+  color: #7b8980;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.settings-input-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.settings-input-icon > svg {
+  position: absolute;
+  left: 12px;
+  color: #849188;
+}
+
+.settings-input-icon input {
+  padding-left: 37px;
+}
+
+.settings-toggle-list {
+  margin-top: 20px;
+  border-top: 1px solid #edf0ed;
+}
+
+.settings-toggle-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 17px 0;
+  border-bottom: 1px solid #edf0ed;
+  cursor: pointer;
+}
+
+.settings-toggle-row strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.settings-toggle-row input {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  accent-color: #086451;
+  cursor: pointer;
+}
+
+.settings-team-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.settings-team-member {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid #e5ece6;
+  border-radius: 11px;
+}
+
+.settings-team-avatar {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  background: #eaf4ee;
+  color: #086451;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.settings-team-details {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.settings-team-details strong {
+  font-size: 14px;
+}
+
+.settings-team-details span {
+  color: #718078;
+  font-size: 12px;
+}
+
+.settings-remove-member {
+  display: grid;
+  place-items: center;
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+  border: 0;
+  border-radius: 8px;
+  background: #fff0ee;
+  color: #bb4437;
+  cursor: pointer;
+}
+
+.settings-remove-member:hover {
+  background: #ffe1dd;
+}
+
+.settings-add-team-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 14px;
+  margin-top: 23px;
+  padding-top: 22px;
+  border-top: 1px solid #edf0ed;
+}
+
+.settings-bottom-save {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 6px 0 20px;
+}
+
+.settings-bottom-save > span {
+  color: #718078;
+  font-size: 13px;
+}
+
+@media (max-width: 760px) {
+  .admin-settings-page {
+    padding: 18px 13px;
+  }
+
+  .settings-page-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .settings-card {
+    padding: 18px;
+  }
+
+  .settings-form-grid,
+  .settings-team-list,
+  .settings-add-team-form {
+    grid-template-columns: 1fr;
+  }
+
+  .settings-field-full {
+    grid-column: auto;
+  }
+
+  .settings-bottom-save {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .settings-save-button,
+  .settings-add-member-button {
+    width: 100%;
+  }
+}
